@@ -1,0 +1,5 @@
+<view class="navs">
+  <navigator wx:for="{{navsData}}" wx:key="image_src" class="navs_item" url="/pages/category/category" open-type="switchTab">
+    <image src="{{item.image_src}}" class="navs_image"></image>
+  </navigator>
+</view>

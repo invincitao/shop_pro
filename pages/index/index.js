@@ -7,7 +7,8 @@ Page({
    */
   data: {
     // 轮播图
-    swiperData: []
+    swiperData: [],
+    navsData: []
   },
 
   /**
@@ -18,8 +19,13 @@ Page({
     let swpierImage = await ajaxUtil.request({
       url: "/home/swiperdata"
     })
+    // 发请求拿到导航栏的数据
+    let navsIcon = await ajaxUtil.request({
+      url: "/home/catitems"
+    })
     this.setData({
-      swiperData: swpierImage.message
+      swiperData: swpierImage.message,
+      navsData: navsIcon.message
     })
   },
 

@@ -1,0 +1,14 @@
+.navs{
+  display: flex;
+  padding: 20rpx 0;
+}
+.navs_item{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navs_image{
+  width: 128rpx;
+  height: 140rpx;
+}

@@ -3,4 +3,6 @@
   <searchInout></searchInout>
   <!-- 轮播图 -->
   <mySwiper swiperData="{{swiperData}}"></mySwiper>
+  <!-- 导航栏 -->
+  <myNavs navsData="{{navsData}}"></myNavs>
 </view>
