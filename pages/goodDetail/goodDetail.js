@@ -1,26 +1,18 @@
-// 导入request
-const ajaxUtil = require("../../ajaxUtil/request.js")
+// pages/goodDetail/goodDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 轮播图
-    swiperData: []
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: async function (options) {
-    // 发请求拿到轮播图的数据
-    let swpierImage = await ajaxUtil.request({
-      url: "/home/swiperdata"
-    })
-    this.setData({
-      swiperData: swpierImage.message
-    })
+  onLoad: function (options) {
+
   },
 
   /**

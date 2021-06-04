@@ -1,0 +1,3 @@
+.swiper_item{
+  height: 100%;
+}

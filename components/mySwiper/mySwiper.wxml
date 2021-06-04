@@ -1,0 +1,10 @@
+<view>
+  <swiper indicator-dots="true" indicator-active-color="#f8544f" indicator-color="white" autoplay="true" interval="2000"
+    duration="500">
+    <swiper-item wx:for="{{swiperData}}" wx:key="goods_id">
+      <navigator class="swiper_item" url="/pages/goodDetail/goodDetail?goods_id={{item.goods_id}}">
+        <image src="{{item.image_src}}"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>

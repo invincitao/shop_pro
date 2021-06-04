@@ -5,6 +5,7 @@
     "pages/cart/cart",
     "pages/my/my",
     "pages/searchCenter/searchCenter",
+    "pages/goodDetail/goodDetail",
     "pages/logs/logs"
   ],
   "window": {
