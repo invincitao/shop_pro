@@ -1,0 +1,3 @@
+<view class="searchBox">
+  <view class="content" bindtap="gotoSearchCenter">搜索</view>
+</view>

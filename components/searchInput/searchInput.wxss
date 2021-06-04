@@ -1,0 +1,17 @@
+.searchBox{
+  width: 750rpx;
+  height: 100rpx;
+  background-color: var(--themeColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content{
+  width: 700rpx;
+  height: 80rpx;
+  background-color: white;
+  color: rgb(99, 95, 95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
