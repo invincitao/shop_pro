@@ -1,0 +1,37 @@
+.pro_list_tilte {
+  height: 59rpx;
+}
+
+.pro_pic {
+  overflow: hidden;
+}
+
+.pro_pic_item {
+  float: left;
+  padding-left: 12rpx;
+}
+
+.pro_pic_item:nth-child(1) .pro_pic_image {
+  width: 232rpx;
+  height: 386rpx;
+}
+
+.pro_pic_item:nth-child(2) .pro_pic_image {
+  width: 233rpx;
+  height: 188rpx;
+}
+
+.pro_pic_item:nth-child(3) .pro_pic_image {
+  width: 232rpx;
+  height: 188rpx;
+}
+
+.pro_pic_item:nth-child(4) .pro_pic_image {
+  width: 233rpx;
+  height: 188rpx;
+}
+
+.pro_pic_item:nth-child(5) .pro_pic_image {
+  width: 232rpx;
+  height: 188rpx;
+}

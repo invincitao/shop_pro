@@ -6,6 +6,7 @@
     "pages/my/my",
     "pages/searchCenter/searchCenter",
     "pages/goodDetail/goodDetail",
+    "pages/goodList/goodList",
     "pages/logs/logs"
   ],
   "window": {

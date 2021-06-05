@@ -5,4 +5,6 @@
   <mySwiper swiperData="{{swiperData}}"></mySwiper>
   <!-- 导航栏 -->
   <myNavs navsData="{{navsData}}"></myNavs>
+  <!-- 列表图片 -->
+  <productList productList="{{productList}}"></productList>
 </view>

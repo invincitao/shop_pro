@@ -3,7 +3,9 @@
  * 3.加入遮罩信息
  */
 // 保存基准路径
-const BASE_URL = "https://106.55.254.112/api/public/v1";
+// const BASE_URL = "https://106.55.254.112/api/public/v1";
+const BASE_URL = "https://api-hmugo-web.itheima.net/api/public/v1"
+
 
 const request = (params) => {
   return new Promise((reslove, reject) => {

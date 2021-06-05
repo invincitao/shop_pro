@@ -1,39 +1,18 @@
-// 导入request
-const ajaxUtil = require("../../ajaxUtil/request.js")
+// pages/goodList/goodList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 轮播图
-    swiperData: [],
-    navsData: [],
-    productList: [],
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: async function (options) {
-    // 发请求拿到轮播图的数据
-    let swpierImage = await ajaxUtil.request({
-      url: "/home/swiperdata"
-    })
-    // 发请求拿到导航栏的数据
-    let navsIcon = await ajaxUtil.request({
-      url: "/home/catitems"
-    })
-    // 发请求获取列表数据
-    let proList = await ajaxUtil.request({
-      url: "/home/floordata"
-    })
-    this.setData({
-      swiperData: swpierImage.message,
-      navsData: navsIcon.message,
-      productList: proList.message
-    })
-    console.log(this.data.productList);
+  onLoad: function (options) {
+    // console.log(options);
   },
 
   /**

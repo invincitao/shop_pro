@@ -1,6 +1,6 @@
 .navs{
   display: flex;
-  padding: 20rpx 0;
+  padding: 20rpx 0 30rpx 0;
 }
 .navs_item{
   flex: 1;

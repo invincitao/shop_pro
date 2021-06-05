@@ -1,0 +1,14 @@
+<view class="product_list">
+  <view class="product_list_item" wx:for="{{productList}}" wx:key="name">
+    <!-- 标题 -->
+    <view class="pro_list_tilte">
+      <image src="{{item.floor_title.image_src}}"></image>
+    </view>
+    <!-- 图片列表 -->
+    <view class="pro_pic">
+      <view class="pro_pic_item" wx:for="{{item.product_list}}" wx:key="image_src" wx:for-item="v" wx:for-index="i">
+        <image src="{{v.image_src}}" class="pro_pic_image" catchtap="handleTap" data-v="{{v}}"></image>
+      </view>
+    </view>
+  </view>
+</view>
