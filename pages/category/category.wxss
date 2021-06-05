@@ -1,1 +1,51 @@
-/* pages/category/category.wxss */
+.cata_left {
+  width: 182rpx;
+  height: calc(100vh - 100rpx);
+  background-color: #f3f3f3;
+  float: left;
+}
+
+.cata_left .cate_left_item {
+  font-size: 27rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.cate_right {
+  float: left;
+  height: calc(100vh - 100rpx);
+  width: calc(100vw - 182rpx);
+}
+/* 点击特效 */
+.active{
+  color: var(--themeColor);
+  border-left: 6rpx solid var(--themeColor);
+}
+
+.cate_right .cate_right_item .cate_right_title{
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #5a5a5a;
+}
+.cate_right .cate_right_list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.cate_right .cate_right_list .cate_item{
+  display: flex;
+  flex-direction: column;
+  width: 33.33%;
+  align-items: center;
+  justify-content: center;
+}
+.cate_right .cate_right_item .cate_right_list .cate_right_image{
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.cate_right .cate_right_list .cate_right_t{
+  font-size: 27rpx;
+}

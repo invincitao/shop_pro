@@ -1,2 +1,29 @@
-<!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="cate">
+  <!-- 搜索框 -->
+  <searchInput></searchInput>
+  <!-- 列表 -->
+  <!-- 左边 -->
+  <scroll-view class="cata_left" scroll-y="true">
+    <view class="cate_left_item {{select_active===index?'active':''}}" wx:for="{{cateList}}" wx:key="cat_id">
+      <view class="cate_left_title" catchtap="handleTap" data-index="{{index}}">
+        {{item.cat_name}}
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 右边 -->
+  <scroll-view class="cate_right" scroll-y="true">
+    <view class="cate_right_item" wx:for="{{rightContent}}" wx:key="cat_id">
+      <!-- 标题 -->
+      <view class="cate_right_title">
+        / {{item.cat_name}} /
+      </view>
+      <!-- 列表 -->
+      <view class="cate_right_list">
+        <navigator class="cate_item" wx:for="{{item.children}}" wx:key="cat_id" wx:for-item="v" wx:for-index="i" url="/pages/goodDetail/goodDetail?cid={{v.cat_id}}">
+          <image src="{{v.cat_icon}}" class="cate_right_image"></image>
+          <text class="cate_right_t">{{v.cat_name}}</text>
+        </navigator>
+      </view>
+    </view>
+  </scroll-view>
+</view>

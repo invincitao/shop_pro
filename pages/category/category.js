@@ -1,3 +1,4 @@
+const ajaxUtil = require('../../ajaxUtil/request.js')
 // pages/category/category.js
 Page({
 
@@ -5,14 +6,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    cateList: [],
+    select_active: 0,
+    rightContent: [],
   },
-
+  handleTap: function (e) {
+    const index = e.target.dataset.index
+    this.setData({
+      select_active: index,
+      rightContent: this.data.cateList[index].children
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: async function (options) {
+    const categoryList = await ajaxUtil.request({
+      url: "/categories"
+    })
+    this.setData({
+      cateList: categoryList.message,
+      rightContent: categoryList.message[this.data.select_active].children
+    })
+    console.log(this.data.cateList);
   },
 
   /**
