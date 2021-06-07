@@ -1,2 +1,4 @@
-<!--pages/goodList/goodList.wxml-->
-<text>pages/goodList/goodList.wxml</text>
+<view class="goodList">
+  <!-- 搜索框 -->
+  <searchInput></searchInput>
+</view>
