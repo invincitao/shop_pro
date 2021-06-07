@@ -19,7 +19,7 @@
       </view>
       <!-- 列表 -->
       <view class="cate_right_list">
-        <navigator class="cate_item" wx:for="{{item.children}}" wx:key="cat_id" wx:for-item="v" wx:for-index="i" url="/pages/goodDetail/goodDetail?cid={{v.cat_id}}">
+        <navigator class="cate_item" wx:for="{{item.children}}" wx:key="cat_id" wx:for-item="v" wx:for-index="i" url="/pages/goodList/goodList?cid={{v.cat_id}}">
           <image src="{{v.cat_icon}}" class="cate_right_image"></image>
           <text class="cate_right_t">{{v.cat_name}}</text>
         </navigator>
