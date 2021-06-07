@@ -1,3 +1,5 @@
+// 引入request
+const ajaxUtil = require('../../ajaxUtil/request.js')
 // pages/goodList/goodList.js
 Page({
 
@@ -20,8 +22,18 @@ Page({
         name: "价格",
         target: "price"
       }
-    ]
+    ],
+    goodsList: []
   },
+  // 定义参数
+  // 页码
+  pagenum: 1,
+  // 页容量
+  pagesize: 20,
+  // 总数
+  total: 0,
+  cid: "",
+  query: "",
   // 子传父事件
   handleTabs: function (msg) {
     const target = msg.detail;
@@ -32,8 +44,31 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    // console.log(options);
+  onLoad: async function (options) {
+    let params = {}
+    if(options.cid){
+      params.cid  = options.cid
+      this.cid = options.cid
+    }
+    if(options.query){
+      params.query = options.query
+      this.query = options.query
+    }
+    params.pagenum = this.pagenum
+    params.pagesize = this.pagesize
+    const goods = await ajaxUtil.request({
+      data:{
+        ...params
+      },
+      url: "/goods/search"
+    })
+    this.total = goods.message.total
+    this.pagenum = goods.message.pagenum
+    this.pagesize = 20
+    this.setData({
+      goodsList: goods.message.goods
+    })
+    console.log(goods);
   },
 
   /**

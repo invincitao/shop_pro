@@ -4,9 +4,21 @@
   <!-- tabs -->
   <myTabs tabs="{{tabs}}" activeTab="{{activeTab}}" bindmytab="handleTabs"></myTabs>
   <!-- 列表 -->
-  <view>
+  <view class="list">
     <!-- 综合 -->
-    <view wx:if="{{activeTab==='all'}}">综合</view>
+    <view wx:if="{{activeTab==='all'}}">
+      <navigator class="list_item" url="/pages/goodDetail/goodDetail" wx:for="{{goodsList}}" wx:key="goods_id">
+        <!-- 左边照片 -->
+        <view class="list_left">
+          <image src="{{item.goods_big_logo?item.goods_big_logo:'/images/empty.png'}}" class="list_left_image"></image>
+        </view>
+        <!-- 右边列表 -->
+        <view class="list_right">
+          <view class="list_right_title">{{item.goods_name}}</view>
+          <view class="list_right_price">￥{{item.goods_price}}</view>
+        </view>
+      </navigator>
+    </view>
     <!-- 销量 -->
     <view wx:if="{{activeTab==='sales'}}">销量</view>
     <!-- 价格 -->
