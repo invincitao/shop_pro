@@ -8,6 +8,10 @@ const BASE_URL = "https://api-hmugo-web.itheima.net/api/public/v1"
 
 
 const request = (params) => {
+  wx.showLoading({
+    title: 'loading...',
+    mask:true
+  })
   return new Promise((reslove, reject) => {
     wx.request({
       // 结构出url
@@ -23,7 +27,7 @@ const request = (params) => {
       },
       // 完成
       complete: () => {
-
+        wx.hideLoading()
       }
     })
   })
