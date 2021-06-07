@@ -46,18 +46,18 @@ Page({
    */
   onLoad: async function (options) {
     let params = {}
-    if(options.cid){
-      params.cid  = options.cid
+    if (options.cid) {
+      params.cid = options.cid
       this.cid = options.cid
     }
-    if(options.query){
+    if (options.query) {
       params.query = options.query
       this.query = options.query
     }
     params.pagenum = this.pagenum
     params.pagesize = this.pagesize
     const goods = await ajaxUtil.request({
-      data:{
+      data: {
         ...params
       },
       url: "/goods/search"
@@ -68,7 +68,6 @@ Page({
     this.setData({
       goodsList: goods.message.goods
     })
-    console.log(goods);
   },
 
   /**
@@ -102,15 +101,70 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
+  // 下拉获取数据
+  getProductList: async function () {
+    const params = {}
+    params.pagenum = 1
+    params.pagesize = this.pagesize
+    if (this.cid) {
+      params.cid = this.cid
+    }
+    if (this.query) {
+      params.query = this.query
+    }
+    const goods = await ajaxUtil.request({
+      url: "/goods/search",
+      data: {
+        ...params
+      }
+    })
+    wx.stopPullDownRefresh()
+    // 赋值总页数和当前页码数
+    this.total = goods.message.total
+    this.setData({
+      goodsList: goods.message.goods
+    })
+  },
   onPullDownRefresh: function () {
-
+    this.setData({
+      goodsList: []
+    })
+    this.getProductList()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
+  onReachBottom: async function () {
+    if (parseInt(this.pagenum) + 1 <= Math.ceil((this.total / this.pagesize))) {
+      this.pagenum = parseInt(this.pagenum) + 1
+      const params = {}
+      params.pagenum = this.pagenum
+      params.pagesize = this.pagesize
+      if (this.cid) {
+        params.cid = this.cid
+      }
+      if (this.query) {
+        params.query = this.query
+      }
+      const goods = await ajaxUtil.request({
+        data: {
+          ...params
+        },
+        url: "/goods/search"
+      })
+      this.total = goods.message.total
+      this.setData({
+        goodsList:[
+          ...this.data.goodsList,
+          ...goods.message.goods
+        ]
+      })
+    }else{
+      wx.showToast({
+        title: '到底啦！',
+      })
+    }
   },
 
   /**

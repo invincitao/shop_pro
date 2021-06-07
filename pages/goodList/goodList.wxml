@@ -7,7 +7,7 @@
   <view class="list">
     <!-- 综合 -->
     <view wx:if="{{activeTab==='all'}}">
-      <navigator class="list_item" url="/pages/goodDetail/goodDetail" wx:for="{{goodsList}}" wx:key="goods_id">
+      <navigator class="list_item" url="/pages/goodDetail/goodDetail?goods_id={{item.goods_id}}" wx:for="{{goodsList}}" wx:key="goods_id">
         <!-- 左边照片 -->
         <view class="list_left">
           <image src="{{item.goods_big_logo?item.goods_big_logo:'/images/empty.png'}}" class="list_left_image"></image>

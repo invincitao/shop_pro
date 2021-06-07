@@ -10,7 +10,7 @@
     "pages/logs/logs"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#f8544f",
     "navigationBarTitleText": "优购商城",
     "navigationBarTextStyle": "white"
