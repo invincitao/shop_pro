@@ -1,4 +1,16 @@
 <view class="goodList">
   <!-- 搜索框 -->
   <searchInput></searchInput>
+  <!-- tabs -->
+  <myTabs tabs="{{tabs}}" activeTab="{{activeTab}}" bindmytab="handleTabs"></myTabs>
+  <!-- 列表 -->
+  <view>
+    <!-- 综合 -->
+    <view wx:if="{{activeTab==='all'}}">综合</view>
+    <!-- 销量 -->
+    <view wx:if="{{activeTab==='sales'}}">销量</view>
+    <!-- 价格 -->
+    <view wx:if="{{activeTab==='price'}}">价格</view>
+  </view>
+
 </view>

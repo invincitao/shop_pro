@@ -5,9 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    // tabs选中的状态
+    activeTab: "all",
+    // tabs数据
+    tabs: [{
+        name: "综合",
+        target: "all"
+      },
+      {
+        name: "销量",
+        target: "sales"
+      },
+      {
+        name: "价格",
+        target: "price"
+      }
+    ]
   },
-
+  // 子传父事件
+  handleTabs: function (msg) {
+    const target = msg.detail;
+    this.setData({
+      activeTab: target
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

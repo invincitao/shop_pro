@@ -1,0 +1,14 @@
+.myTabs{
+  height: 88rpx;
+  display: flex;
+}
+.tabs_item{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.active{
+  border-bottom: 4rpx solid var(--themeColor);
+  font-weight: bold;
+}

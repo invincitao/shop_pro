@@ -1,0 +1,11 @@
+<view class="myTabs" catchtap="handleTap">
+  <view class="tabs_item {{activeTab===item.target?'active':''}}" data-target="{{item.target}}" wx:for="{{tabs}}" wx:key="name">
+    {{item.name}}
+  </view>
+  <!-- <view class="tabs_item {{activeTab==='sales'?'active':''}}" data-target="sales">
+    销量
+  </view>
+  <view class="tabs_item {{activeTab==='price'?'active':''}}" data-target="price">
+    价格
+  </view> -->
+</view>
