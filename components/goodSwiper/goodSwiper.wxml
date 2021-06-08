@@ -1,0 +1,9 @@
+<view>
+  <swiper class="gd_swiper" indicator-dots="true" indicator-active-color="#f8544f" indicator-color="##928f8e"
+    autoplay="true" interval="2000" duration="500">
+    <swiper-item wx:for="{{pics}}" wx:key="pics_id" class="gd_item">
+      <image src="{{item.pics_big}}" class="gd_image" catchtap="handlePreview" data-pics="{{pics}}"
+        data-current="{{item.pics_big}}"></image>
+    </swiper-item>
+  </swiper>
+</view>

@@ -1,3 +1,4 @@
+const ajaxUtil = require('../../ajaxUtil/request.js')
 // pages/goodDetail/goodDetail.js
 Page({
 
@@ -5,14 +6,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    goodsDetail:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: async function (options) {
+    const goods_id = options.goods_id
+    console.log(options);
+    const detail = await ajaxUtil.request({
+      data:{
+        goods_id
+      },
+      url: "/goods/detail"
+    })
+    this.setData({
+      goodsDetail:detail.message
+    })
+    console.log(detail);
   },
 
   /**

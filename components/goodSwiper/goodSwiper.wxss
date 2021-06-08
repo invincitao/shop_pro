@@ -1,0 +1,15 @@
+.gd_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gd_image {
+  width: 497rpx;
+}
+
+.gd_swiper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

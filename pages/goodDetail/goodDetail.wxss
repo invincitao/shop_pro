@@ -1,1 +1,39 @@
-/* pages/goodDetail/goodDetail.wxss */
+.gd_detail_detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 35rpx 0 35rpx;
+  align-items: center;
+}
+
+.gd_detail_left {
+  color: var(--themeColor);
+}
+
+.gd_detail_right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gd_right_share {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-right: 60rpx;
+}
+
+.gd_right_share button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100% !important;
+  height: 100%;
+}
+
+.gd_dec{
+  padding: 35rpx;
+  font-weight: bold;
+  font-size: 30rpx;
+}

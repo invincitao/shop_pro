@@ -1,2 +1,22 @@
-<!--pages/goodDetail/goodDetail.wxml-->
-<text>pages/goodDetail/goodDetail.wxml</text>
+<view class="gd_detail">
+  <!-- 轮播图 -->
+  <gdSwiper pics="{{goodsDetail.pics}}"></gdSwiper>
+  <!-- 价格、分享、收藏 -->
+  <view class="gd_detail_detail">
+    <!-- 价格 -->
+    <view class="gd_detail_left">￥{{goodsDetail.goods_price}}</view>
+    <!-- 右边 -->
+    <view class="gd_detail_right">
+      <view class="gd_right_share">
+        <view class="iconfont icon-fenxiang"></view>
+        <button open-type="share" type="degault"></button>
+      </view>
+      <!-- 收藏 -->
+      <view class="iconfont icon-add"></view>
+    </view>
+  </view>
+  <!-- 商品详情 -->
+  <view class="gd_dec">
+    {{goodsDetail.goods_name}}
+  </view>
+</view>

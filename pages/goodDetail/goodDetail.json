@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "gdSwiper": "/components/goodSwiper/goodSwiper"
+  },
+  "navigationBarTitleText": "商品详情"
+
 }
