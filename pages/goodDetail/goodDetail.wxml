@@ -1,22 +1,46 @@
 <view class="gd_detail">
-  <!-- 轮播图 -->
-  <gdSwiper pics="{{goodsDetail.pics}}"></gdSwiper>
-  <!-- 价格、分享、收藏 -->
-  <view class="gd_detail_detail">
-    <!-- 价格 -->
-    <view class="gd_detail_left">￥{{goodsDetail.goods_price}}</view>
-    <!-- 右边 -->
-    <view class="gd_detail_right">
-      <view class="gd_right_share">
-        <view class="iconfont icon-fenxiang"></view>
-        <button open-type="share" type="degault"></button>
+  <view class="gd_detail_top">
+    <!-- 轮播图 -->
+    <gdSwiper pics="{{goodsDetail.pics}}"></gdSwiper>
+    <!-- 价格、分享、收藏 -->
+    <view class="gd_detail_detail">
+      <!-- 价格 -->
+      <view class="gd_detail_left">￥{{goodsDetail.goods_price}}</view>
+      <!-- 右边 -->
+      <view class="gd_detail_right">
+        <view class="gd_right_share">
+          <view class="iconfont icon-fenxiang"></view>
+          <button open-type="share" type="degault"></button>
+        </view>
+        <!-- 收藏 -->
+        <view class="iconfont icon-add {{isCollect?'active':''}}" catchtap="handleCollect"></view>
       </view>
-      <!-- 收藏 -->
-      <view class="iconfont icon-add"></view>
+    </view>
+    <!-- 商品详情 -->
+    <view class="gd_dec">
+      {{goodsDetail.goods_name}}
+    </view>
+    <!-- 商品详情内容 -->
+    <view class="gd_content">
+      <view class="gd_content_title">图文详情</view>
+      <rich-text nodes="{{goodsDetail.goods_introduce}}"></rich-text>
     </view>
   </view>
-  <!-- 商品详情 -->
-  <view class="gd_dec">
-    {{goodsDetail.goods_name}}
+  <view class="tab-bar">
+    <!-- 客服 -->
+    <view class="kefu">
+      <view class="iconfont icon-kefu"></view>
+      <text>联系客服</text>
+      <button open-type="contact"></button>
+    </view>
+    <!-- 购物车 -->
+    <navigator class="shop" url="/pages/cart/cart" open-type="switchTab">
+      <view class="iconfont icon-gouwuche"></view>
+      <text>购物车</text>
+    </navigator>
+    <!-- 加入购物车 -->
+    <view class="addshop" catchtap="handleAddCart" catchtap="handleAddCart">加入购物车</view>
+    <!-- 立即购买 -->
+    <navigator url="/pages/pay/pay" class="buynow">立即购买</navigator>
   </view>
 </view>

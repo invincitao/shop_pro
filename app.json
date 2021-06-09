@@ -7,6 +7,7 @@
     "pages/searchCenter/searchCenter",
     "pages/goodDetail/goodDetail",
     "pages/goodList/goodList",
+    "pages/pay/pay",
     "pages/logs/logs"
   ],
   "window": {
